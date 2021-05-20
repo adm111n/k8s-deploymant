@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloword
+  labels:
+    app: helloword
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: helloword
+  template:
+    metadata:
+      labels:
+        app: helloword
+    spec:
+      containers:
+      - name: helloword
+        image: timur322/spring-boot-application:0.1
+        ports:
+        - containerPort: 8080
